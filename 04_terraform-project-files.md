@@ -373,8 +373,8 @@ terraform destroy
 ---
 
 ## 9 — Summary Table
-| File	| Purpose |	Key | Concept | 
-|-------|----------|-----|----------|
+| File	| Purpose |	Key Concept | 
+|-------|----------|------------|
 | providers.tf	| Provider setup	| Connect Terraform to Azure | 
 | variables.tf	| Input vars	| Dynamic configuration | 
 | main.tf	| Resources	| Actual Azure infrastructure |
