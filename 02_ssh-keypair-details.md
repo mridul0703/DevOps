@@ -1,7 +1,6 @@
 # SSH Keypair for Terraform + Ansible — Detailed Guide
 
-**File:** `ssh-keypair-details.md`  
-**Purpose:** Create an SSH keypair on WSL/Ubuntu that Terraform will upload to an Azure VM and Ansible will use to SSH into that VM.
+> Create an SSH keypair on WSL/Ubuntu that Terraform will upload to an Azure VM and Ansible will use to SSH into that VM.
 
 ---
 
