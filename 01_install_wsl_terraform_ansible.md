@@ -227,14 +227,3 @@ ls -l ~/.ssh/id_rsa_azure*  # check files
 
 ---
 
-## 7 — License & attribution
-This guide is provided as-is for instructional purposes. Commands reference official distributions and repos (Microsoft, HashiCorp, Ansible). Please follow your organization’s policies for secrets and production usage.
-
----
-
-If you want, I can:
-- Convert this into a ready-to-commit `README.md` for a GitHub repo (with `.gitignore` template), or
-- Produce a single bash script to automate the WSL-side installs (I recommend running the script interactively and reviewing it first).
-
-Which would you like next?
-
