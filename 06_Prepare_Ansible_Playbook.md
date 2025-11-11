@@ -1,6 +1,18 @@
 # 6 — Create a simple Ansible playbook (example: install Nginx)
 
-- Create playbook.yml:
+> Create and run a minimal Ansible playbook to install and start Nginx on your VM.
+
+## Where to run
+- Inside your Terraform/Ansible working directory in the WSL Ubuntu shell.
+- Ensure your `hosts` inventory from the previous step exists and contains the `[web]` group.
+
+## Prerequisites
+- Ansible installed in WSL.
+- SSH private key at `~/.ssh/id_rsa_azure` with correct permissions.
+- Inventory file `hosts` with your VM’s public IP.
+
+## 1) Create the playbook
+Create `playbook.yml` with the following content:
 
 ```yaml
 ---
@@ -33,14 +45,15 @@
         mode: '0644'
 ```
 
-What this does: updates apt, installs nginx, ensures service is running, and writes a simple index page.
+What this does: updates apt, installs nginx, ensures the service is running/enabled, and writes a simple index page.
 
-- Run the playbook:
+## 2) Run the playbook
 
 ```bash
 ansible-playbook -i hosts playbook.yml --private-key ~/.ssh/id_rsa_azure
 ```
 
-What this does: Ansible connects to the VM via SSH (private key) and executes the tasks using the apt and service modules. You’ll see per-task output (changed/ok/failure).
+What this does: connects to the VM via SSH using your private key and executes the tasks. You’ll see per‑task output (changed/ok/failure).
 
-- To verify, open http://<VM_IP>/ in your browser — you should see the index page.
+## 3) Verify the result
+- Open `http://<VM_IP>/` in your browser — you should see the index page.
