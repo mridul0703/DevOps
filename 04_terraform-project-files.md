@@ -1,7 +1,6 @@
 # Create Terraform Project Files — Full Detailed Guide
 
-**File:** `terraform-project-files.md`  
-**Purpose:** Set up and understand a complete Terraform configuration for deploying an Azure Virtual Machine.
+> Set up and understand a complete Terraform configuration for deploying an Azure Virtual Machine.
 
 ---
 
@@ -24,17 +23,17 @@ Terraform needs a set of configuration files written in HashiCorp Configuration 
 Each file defines what infrastructure to create, how it should behave, and how outputs are handled.
 
 The common structure includes:
-- providers.tf → defines the cloud provider (Azure)
-- variables.tf → stores reusable input variables
-- main.tf → the main logic (infrastructure resources)
-- outputs.tf → defines values Terraform should print after apply
-- terraform.tfvars → stores variable overrides (optional, often excluded from git)
+- `providers.tf` → defines the cloud provider (Azure)
+- `variables.tf` → stores reusable input variables
+- `main.tf` → the main logic (infrastructure resources)
+- `outputs.tf` → defines values Terraform should print after apply
+- `terraform.tfvars` → stores variable overrides (optional, often excluded from git)
 
 ---
 
 ## 3 — Files and their roles
 
-- 📘 providers.tf
+- 📘 `providers.tf`
 ```hcl
 terraform {
   required_providers {
@@ -55,18 +54,18 @@ provider "azurerm" {
 ```
 
 🔍 Explanation
-- terraform {} block defines global Terraform settings.
+- `terraform {}` block defines global Terraform settings.
   - required_providers: tells Terraform to use the AzureRM provider (HashiCorp’s official plugin).
   - required_version: ensures Terraform CLI version compatibility.
-- provider "azurerm": configures Azure Resource Manager plugin.
-  - The features {} block is required by AzureRM provider (can remain empty).
+- `provider "azurerm"`: configures Azure Resource Manager plugin.
+  - The `features {}` block is required by AzureRM provider (can remain empty).
   - Authentication is handled automatically via:
     - Azure CLI (if you ran az login), or
     - Environment variables (ARM_CLIENT_ID, etc.) if using Service Principal.
 
 ---
 
-- 📗 variables.tf
+- 📗 `variables.tf`
 ```hcl
 variable "location" {
   type    = string
@@ -113,7 +112,7 @@ variable "vm_size" {
 
 ---
 
-- 📙 main.tf
+- 📙 `main.tf`
 ```hcl
 resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
@@ -256,7 +255,7 @@ Terraform automatically determines dependencies (e.g., VM after NIC, NIC after s
 
 ---
 
-- 📒 outputs.tf
+- 📒 `outputs.tf`
 
 ```hcl
 output "vm_public_ip" {
@@ -283,7 +282,7 @@ to see your VM's public IP.
 
 ---
 
-- 📄 terraform.tfvars (optional)
+- 📄 `terraform.tfvars` (optional)
 
 ```hcl
 location            = "eastus"
