@@ -1,6 +1,6 @@
 # 07 — Deployment & Teardown scripts
 
-This document describes the two shell scripts used to deploy and destroy an Azure VM + Nginx setup using Terraform and Ansible.
+> This document describes the two shell scripts used to deploy and destroy an Azure VM + Nginx setup using Terraform and Ansible.
 
 **Files covered**
 
@@ -158,16 +158,4 @@ chmod +x destroy.sh
 
 ---
 
-## Where these scripts came from
-
-These scripts were provided alongside this project and reviewed to create this documentation.
-
-If you'd like, I can:
-- Convert the `sleep` into a robust waiting loop.
-- Make the scripts accept flags (e.g., `--key`, `--user`, `--wait-time`).
-- Add safety checks before destroying resources.
-
----
-
-*End of document*
 
