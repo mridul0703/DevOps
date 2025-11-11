@@ -1,6 +1,6 @@
 # Creating Custom Azure Image using Packer
 
-**Purpose:** Build a reusable Azure Managed Image with Nginx pre-installed using Packer, and use it later in Terraform deployments.
+> Build a reusable Azure Managed Image with Nginx pre-installed using Packer, and use it later in Terraform deployments.
 
 ---
 
@@ -225,10 +225,6 @@ echo '<!DOCTYPE html>
 <head><title>Custom Image</title></head>
 <body style="text-align:center; font-family:Arial; background:#f4f4f4; padding:40px;">
 <h1>This image was built by Mridul M Kumar</h1>
-<p><a href="https://github.com/mridul0703">GitHub</a> | 
-<a href="https://github.com/mridul0703/DevOps">Project Repo</a></p>
-<p>This image provisions a VM using Terraform, configures it via Ansible, and packages it into a reusable Azure image using Packer.</p>
-<p>Thank you for visiting!</p>
 </body>
 </html>' | sudo tee /var/www/html/index.nginx-debian.html
 ```
