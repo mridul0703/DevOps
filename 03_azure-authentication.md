@@ -1,7 +1,6 @@
 # Authenticate to Azure from WSL — Developer vs CI
 
-**File:** `azure-authentication.md`  
-**Purpose:** Authenticate to Azure from WSL for use with Terraform and Ansible.
+> Authenticate to Azure from WSL for use with Terraform and Ansible.
 
 ---
 
